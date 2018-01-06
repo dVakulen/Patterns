@@ -20,7 +20,6 @@ LRUCache (Dictionary wrapper):
 	    - If new size exceeds required (EnsureSize):
  	      - Retrieve last node from entriesByAccessView (var leastRecentlyUsed)
  	      - Remove(leastRecentlyUsed)
-	    - Insert a new item
         - On Remove (StopTracking):
           - Retrieve entry from keyToEntriesByAccess and remove it
           - Remove node from entriesByAccessView
