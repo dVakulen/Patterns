@@ -1,0 +1,30 @@
+Single process version:
+
+LRUCache (Dictionary wrapper):
+  - Action filters:
+    - Get:
+	  - Mark entry access
+    - Put (AddOrUpdate):
+      - Remove the least recently used
+       
+  - Least recently used:
+    - Tracking: 
+      - With use of auxiliary doubly linked list (var orderByAccessView) and dictionary (var keyToOrderByAccess)
+	    - Get:
+ 		  - Retrieve entry from keyToOrderByAccess 		  
+          - Move node in entriesByAccessView to the top (TrackAccess)
+        - Put:
+          - Ensure entry in keyToEntriesByAccess
+          - Move node in entriesByAccessView to the top (TrackAccess)
+		  - If new size exceeds required (EnsureSize):
+            - Retrieve last node from entriesByAccessView (var leastRecentlyUsed)
+			- Remove(leastRecentlyUsed)
+        - Remove:
+          - Retrieve entry from keyToEntriesByAccess and remove it
+          - Remove node from entriesByAccessView
+		  - Remove entry from the dictionary itself
+Costs:
+  - Get: 
+    - Time: O(1)  
+  - Put:
+    - Time: O(1)  
