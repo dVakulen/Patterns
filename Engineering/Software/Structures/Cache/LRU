@@ -23,7 +23,6 @@ LRUCache (Dictionary wrapper):
         - On Remove (StopTracking):
           - Retrieve entry from keyToEntriesByAccess and remove it
           - Remove node from entriesByAccessView
-          - Remove entry from the dictionary itself
 Costs:
   - Get: 
     - Time: O(1)  
