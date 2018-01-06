@@ -2,9 +2,9 @@ Single process version:
 
 LRUCache (Dictionary wrapper):
   - Action filters:
-    - Get:
+    - On Get:
       - Mark entry access
-    - Put (AddOrUpdate):
+    - On Put (AddOrUpdate):
       - Remove the least recently used
        
   - Least recently used:
@@ -20,7 +20,7 @@ LRUCache (Dictionary wrapper):
 	    - If new size exceeds required (EnsureSize):
  	      - Retrieve last node from entriesByAccessView (var leastRecentlyUsed)
  	      - Remove(leastRecentlyUsed)
-	  - Insert a new item
+	    - Insert a new item
         - On Remove (StopTracking):
           - Retrieve entry from keyToEntriesByAccess and remove it
           - Remove node from entriesByAccessView
